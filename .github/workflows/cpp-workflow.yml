@@ -1,0 +1,53 @@
+name: Cpp WorkFlow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        -name : Build AvrGcc step
+         id: documents
+         use: SaitoRyuya945/docker_action_test
+         with:
+           shellcommand: "./github/workflow/build_test.sh"
+
+           #      - name: build_install
+           #        run: |
+           #          ./build_install.sh
+           #
+           #      - name: build_release
+           #        run: |
+           #          rm -rf ./build_release
+           #          mkdir build_release
+           #          cd build_release
+           #          cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
+           #          ninja ci
+           #          cd ../
+
+          #      - name: build_debug
+          #        run: |
+          #          rm -rf ./build_debug
+          #          mkdir build_debug
+          #          cd build_debug
+          #          cmake -GNinja -DCMAKE_BUILD_TYPE=Debug ..
+          #          ninja ci
+          #          cd ../
+          #
+          #      - name: tests_result
+          #        run: |
+          #          ./build_debug/test/tests
+          #
+          #      - name: coverage_send
+          #        run: |
+          #          lcoveralls --token eWxRQxp6JtIdoInwQ84wZYmyXhTEJWQqu --retry-count 3 build_debug/test/test_coverage.info.cleaned
+          #
+          #  cpplint:
+          #    runs-on: ubuntu-latest
+          #    steps:
+          #      - uses: actions/checkout@v2
+          #      - uses: actions/setup-python@v1
+          #      - run: pip install cpplint
+          #      - run: cpplint --filter=-legal/copyright --recursive ./src ./test ./include

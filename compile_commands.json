@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/ryuya/hal/coveralls_sample/build",
+  "command": "/usr/bin/c++  -I/home/ryuya/hal/coveralls_sample/include/mymath  -o CMakeFiles/mymathlib.dir/src/mymath.cpp.o -c /home/ryuya/hal/coveralls_sample/src/mymath.cpp",
+  "file": "/home/ryuya/hal/coveralls_sample/src/mymath.cpp"
+},
+{
+  "directory": "/home/ryuya/hal/coveralls_sample/build/cli",
+  "command": "/usr/bin/c++  -I/home/ryuya/hal/coveralls_sample/include/mymath -Wall -Wextra -Wno-long-long -pedantic -fsanitize=address -fno-omit-frame-pointer -fdiagnostics-color=always -o CMakeFiles/mymath_sample.dir/main.cpp.o -c /home/ryuya/hal/coveralls_sample/cli/main.cpp",
+  "file": "/home/ryuya/hal/coveralls_sample/cli/main.cpp"
+},
+{
+  "directory": "/home/ryuya/hal/coveralls_sample/build/cli",
+  "command": "/usr/bin/c++  -I/home/ryuya/hal/coveralls_sample/include/mymath -Wall -Wextra -Wno-long-long -pedantic -fsanitize=address -fno-omit-frame-pointer -fdiagnostics-color=always -o CMakeFiles/mymath_sample.dir/__/src/mymath.cpp.o -c /home/ryuya/hal/coveralls_sample/src/mymath.cpp",
+  "file": "/home/ryuya/hal/coveralls_sample/src/mymath.cpp"
+},
+{
+  "directory": "/home/ryuya/hal/coveralls_sample/build/test",
+  "command": "/usr/bin/c++  -I/home/ryuya/hal/coveralls_sample/gtest/include -I/home/ryuya/hal/coveralls_sample/include/mymath -g -O0 --coverage -Wall -Wextra -Wno-long-long -pedantic -fsanitize=address -fno-omit-frame-pointer -fdiagnostics-color=always -o CMakeFiles/tests.dir/main.cpp.o -c /home/ryuya/hal/coveralls_sample/test/main.cpp",
+  "file": "/home/ryuya/hal/coveralls_sample/test/main.cpp"
+},
+{
+  "directory": "/home/ryuya/hal/coveralls_sample/build/test",
+  "command": "/usr/bin/c++  -I/home/ryuya/hal/coveralls_sample/gtest/include -I/home/ryuya/hal/coveralls_sample/include/mymath -g -O0 --coverage -Wall -Wextra -Wno-long-long -pedantic -fsanitize=address -fno-omit-frame-pointer -fdiagnostics-color=always -o CMakeFiles/tests.dir/test1.cpp.o -c /home/ryuya/hal/coveralls_sample/test/test1.cpp",
+  "file": "/home/ryuya/hal/coveralls_sample/test/test1.cpp"
+},
+{
+  "directory": "/home/ryuya/hal/coveralls_sample/build/test",
+  "command": "/usr/bin/c++  -I/home/ryuya/hal/coveralls_sample/gtest/include -I/home/ryuya/hal/coveralls_sample/include/mymath -g -O0 --coverage -Wall -Wextra -Wno-long-long -pedantic -fsanitize=address -fno-omit-frame-pointer -fdiagnostics-color=always -o CMakeFiles/tests.dir/test2.cpp.o -c /home/ryuya/hal/coveralls_sample/test/test2.cpp",
+  "file": "/home/ryuya/hal/coveralls_sample/test/test2.cpp"
+},
+{
+  "directory": "/home/ryuya/hal/coveralls_sample/build/test",
+  "command": "/usr/bin/c++  -I/home/ryuya/hal/coveralls_sample/gtest/include -I/home/ryuya/hal/coveralls_sample/include/mymath -g -O0 --coverage -Wall -Wextra -Wno-long-long -pedantic -fsanitize=address -fno-omit-frame-pointer -fdiagnostics-color=always -o CMakeFiles/tests.dir/__/src/mymath.cpp.o -c /home/ryuya/hal/coveralls_sample/src/mymath.cpp",
+  "file": "/home/ryuya/hal/coveralls_sample/src/mymath.cpp"
+}
+]
