@@ -10,7 +10,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Build 
-        uses: actions/docker_action_test@v1
+        uses: SaitoRyuya945/docker_action_test@v1
         with:
           shellcommand: "./github/workflow/build_test.sh"
 
