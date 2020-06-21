@@ -7,10 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      uses: actions/checkout@v2
-      uses: SaitoRyuya945/docker_action_test
-      with:
-        shellcommand: "./github/workflow/build_test.sh"
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Build 
+        uses: SaitoRyuya945/docker_action_test
+        with:
+          shellcommand: "./github/workflow/build_test.sh"
 
            #      - name: build_install
            #        run: |
