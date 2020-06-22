@@ -1,4 +1,4 @@
-#include "mymath.hpp"
+#include "mymath.h"
 
 int mysum(int a, int b)
 {

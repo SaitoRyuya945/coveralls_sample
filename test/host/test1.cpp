@@ -1,7 +1,9 @@
 #include "gtest/gtest.h"
 #include <ctime>
 #include <numeric>
-#include "mymath.hpp"
+extern "C" {
+#include "mymath.h"
+}
 
 TEST(GooleTest, test1)
 { 

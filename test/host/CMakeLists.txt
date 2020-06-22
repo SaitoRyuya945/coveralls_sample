@@ -5,7 +5,7 @@ include(ExternalProject)
 # GoogleTestをビルドするディレクトリを指定
 set(GTEST_BUILD_DIR ${CMAKE_BINARY_DIR}/gtest)
 # GoogleTestをインストールするディレクトリを指定
-set(GTEST_INSTALL_DIR ${PROJECT_SOURCE_DIR}/gtest)
+set(GTEST_INSTALL_DIR ${CMAKE_SOURCE_DIR}/gtest)
 # GoogleTestのヘッダファイルがあるディレクトリ
 set(GTEST_INCLUDE_DIR ${GTEST_INSTALL_DIR}/include)
 # GoogleTestの静的ライブラリがあるフォルダ
@@ -22,7 +22,7 @@ ExternalProject_Add(googletest
     PREFIX ${GTEST_BUILD_DIR}
     # GoogleTestをダウンロードして回答した後、
     # cmakeを実行するときに渡される引数
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${GTEST_INSTALL_DIR}
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${GTEST_INSTALL_DIR} -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER} -DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}
 )
 
 # gtestを静的ライブラリとして登録
@@ -89,7 +89,7 @@ set(COVERAGE_OPTION_PATH
     $<$<STREQUAL:"${CMAKE_CXX_COMPILER_ID}","Clang">:${CMAKE_SOURCE_DIR}/llvm-gcov.sh>
 )
 
-add_custom_target(test_coverage
+add_custom_target(debug_test
     COMMAND lcov -d . -z ${COVERAGE_OPTION} ${COVERAGE_OPTION_PATH}
     COMMAND lcov -c -i -d . -o test_coverage.base ${COVERAGE_OPTION} ${COVERAGE_OPTION_PATH} 
     COMMAND tests
@@ -105,10 +105,10 @@ add_custom_target(test_coverage
 add_custom_target(test_coverage_to_html
     COMMAND genhtml -o test_coverage_to_html --num-spaces 4 -s --legend ${PROJECT_BINARY_DIR}/test_coverage.info.cleaned
     WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
-    DEPENDS test_coverage
+    DEPENDS debug_test
 )
 
-add_custom_target(run_test
+add_custom_target(release_test
     COMMAND tests
     WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
     DEPENDS tests

@@ -1,4 +1,4 @@
 target_sources(mymathlib
     PUBLIC
-    mymath.cpp
+    mymath.c
 )

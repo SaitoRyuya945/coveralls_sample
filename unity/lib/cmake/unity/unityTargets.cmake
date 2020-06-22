@@ -16,7 +16,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_targetsDefined)
 set(_targetsNotDefined)
 set(_expectedTargets)
-foreach(_expectedTarget GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
+foreach(_expectedTarget unity::framework)
   list(APPEND _expectedTargets ${_expectedTarget})
   if(NOT TARGET ${_expectedTarget})
     list(APPEND _targetsNotDefined ${_expectedTarget})
@@ -50,41 +50,16 @@ if(_IMPORT_PREFIX STREQUAL "/")
   set(_IMPORT_PREFIX "")
 endif()
 
-# Create imported target GTest::gtest
-add_library(GTest::gtest STATIC IMPORTED)
+# Create imported target unity::framework
+add_library(unity::framework STATIC IMPORTED)
 
-set_target_properties(GTest::gtest PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-)
-
-# Create imported target GTest::gtest_main
-add_library(GTest::gtest_main STATIC IMPORTED)
-
-set_target_properties(GTest::gtest_main PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-)
-
-# Create imported target GTest::gmock
-add_library(GTest::gmock STATIC IMPORTED)
-
-set_target_properties(GTest::gmock PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-)
-
-# Create imported target GTest::gmock_main
-add_library(GTest::gmock_main STATIC IMPORTED)
-
-set_target_properties(GTest::gmock_main PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
+set_target_properties(unity::framework PROPERTIES
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/unity"
 )
 
 # Load information for each installed configuration.
 get_filename_component(_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
-file(GLOB CONFIG_FILES "${_DIR}/GTestTargets-*.cmake")
+file(GLOB CONFIG_FILES "${_DIR}/unityTargets-*.cmake")
 foreach(f ${CONFIG_FILES})
   include(${f})
 endforeach()

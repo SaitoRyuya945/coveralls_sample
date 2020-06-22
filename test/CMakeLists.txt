@@ -1,5 +1,4 @@
 if (${AVR_CROSS_COMPILE} STREQUAL TRUE)
-    message(${CMAKE_CXX_COMPILER_ID})
     add_subdirectory(target)
 else()
     add_subdirectory(host)

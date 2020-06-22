@@ -1,5 +1,5 @@
-libdir=/home/ryuya/coveralls_sample/gtest/lib
-includedir=/home/ryuya/coveralls_sample/gtest/include
+libdir=/home/ryuya/hal/coveralls_sample/gtest/lib
+includedir=/home/ryuya/hal/coveralls_sample/gtest/include
 
 Name: gmock
 Description: GoogleMock (without main() function)
