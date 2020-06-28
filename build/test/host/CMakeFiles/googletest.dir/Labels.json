@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/test/host/CMakeFiles/googletest"
+		},
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/test/host/CMakeFiles/googletest.rule"
+		},
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/test/host/CMakeFiles/googletest-complete.rule"
+		},
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-install.rule"
+		},
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-mkdir.rule"
+		},
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-download.rule"
+		},
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-update.rule"
+		},
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-patch.rule"
+		},
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-configure.rule"
+		},
+		{
+			"file" : "/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest"
+		],
+		"name" : "googletest"
+	}
+}

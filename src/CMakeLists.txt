@@ -1,4 +1,2 @@
-target_sources(mymathlib
-    PUBLIC
-    mymath.c
-)
+add_subdirectory(mymath)
+add_subdirectory(driver)

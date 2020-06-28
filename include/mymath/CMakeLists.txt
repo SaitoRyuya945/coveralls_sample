@@ -1,4 +1,4 @@
-target_sources(mymathlib
+target_sources(mymath
     PUBLIC
     mymath.h
 )

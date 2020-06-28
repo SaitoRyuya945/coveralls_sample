@@ -1,0 +1,1 @@
+cmd='/usr/local/bin/cmake;-DCMAKE_INSTALL_PREFIX:PATH=/home/ryuya/hal/coveralls_sample/gtest;-DCMAKE_CXX_COMPILER=/usr/bin/c++;-DCMAKE_C_COMPILER=/usr/bin/cc;-GNinja;<SOURCE_DIR><SOURCE_SUBDIR>'

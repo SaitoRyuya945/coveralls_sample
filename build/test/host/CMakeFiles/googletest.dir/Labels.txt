@@ -1,0 +1,13 @@
+# Target labels
+ googletest
+# Source files and their labels
+/home/ryuya/hal/coveralls_sample/build/test/host/CMakeFiles/googletest
+/home/ryuya/hal/coveralls_sample/build/test/host/CMakeFiles/googletest.rule
+/home/ryuya/hal/coveralls_sample/build/test/host/CMakeFiles/googletest-complete.rule
+/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-install.rule
+/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-mkdir.rule
+/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-download.rule
+/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-update.rule
+/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-patch.rule
+/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-configure.rule
+/home/ryuya/hal/coveralls_sample/build/gtest/src/googletest-stamp/googletest-build.rule

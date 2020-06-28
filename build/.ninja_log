@@ -1,0 +1,26 @@
+# ninja log v5
+3	137	1593145353268678700	CMakeFiles/mymath.dir/src/mymath/mymath.c.o	ba32bde9baf39819
+259	264	0	cli/CMakeFiles/run_mymath_sample	f7523fac818d2a6e
+100	179	1593145353326678200	libdriver.a	59254f4cac6ce48b
+6	130	1593145353265679300	cli/CMakeFiles/mymath_sample.dir/main.c.o	914748a853feab10
+204	292	1593145353436674500	cli/mymath_sample	4ad7b8fe02d9d50
+1	98	1593145353233676100	CMakeFiles/driver.dir/src/driver/uart.c.o	d926cf45170f2bb
+138	203	1593145353349674700	libmymath.a	f0a1d27dd70d50a2
+8	147	1593145353266676500	cli/CMakeFiles/mymath_sample.dir/__/src/mymath/mymath.c.o	7c41418a70a04fd5
+13	154	1593145353271685200	test/host/CMakeFiles/tests.dir/__/__/src/mymath/mymath.c.o	834793e90951aa04
+17	163	1593145353269682600	test/host/CMakeFiles/tests.dir/__/__/src/driver/uart.c.o	f89a44cc60dd45a0
+11	1126	1593145354266673700	test/host/CMakeFiles/tests.dir/main.cpp.o	5656dbb86dd44bcc
+1131	1448	1593145354592773400	test/host/tests	f2b8f1cb631a482f
+1449	1500	0	test/host/CMakeFiles/release_test	35538b895d2a2a02
+4	84	1593145684027453800	CMakeFiles/driver.dir/src/driver/uart.c.o	86af6d086821a860
+6	106	1593145684045455300	CMakeFiles/mymath.dir/src/mymath/mymath.c.o	6808441ce3f2b33a
+9	112	1593145684049455700	cli/CMakeFiles/mymath_sample.dir/main.c.o	e0dcc9e57b2314b1
+11	114	1593145684052454800	cli/CMakeFiles/mymath_sample.dir/__/src/mymath/mymath.c.o	7e1838b23d61b914
+17	124	1593145684068453700	test/host/CMakeFiles/tests.dir/__/__/src/mymath/mymath.c.o	4ab12915797ee3f3
+20	127	1593145684069452600	test/host/CMakeFiles/tests.dir/__/__/src/driver/uart.c.o	64019dde27803e7d
+87	165	1593145684111452100	libdriver.a	59254f4cac6ce48b
+107	176	1593145684122450800	libmymath.a	f0a1d27dd70d50a2
+177	268	1593145684211454200	cli/mymath_sample	65ab4af667df0c20
+14	1095	1593145685035008800	test/host/CMakeFiles/tests.dir/main.cpp.o	68395dd9b5389178
+1096	1372	1593145685314980900	test/host/tests	b636a5e471699ffa
+1373	2536	0	test/host/CMakeFiles/debug_test	cf0ae4ba961ce127

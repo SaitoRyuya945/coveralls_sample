@@ -2,21 +2,31 @@ project(tests C)
 
 include(ExternalProject)
 
-# UnityTestをビルドするディレクトリを指定
 set(UNITY_BUILD_DIR ${CMAKE_BINARY_DIR}/unity)
 set(UNITY_INSTALL_DIR ${CMAKE_SOURCE_DIR}/unity)
-set(UNITY_INCLUDE_DIR ${UNITY_INSTALL_DIR}/include)
+set(UNITY_INCLUDE_DIR ${UNITY_INSTALL_DIR}/src)
 set(UNITY_LIB_DIR ${UNITY_INSTALL_DIR}/lib)
 
 ExternalProject_Add(unitytest
-    URL https://github.com/ThrowTheSwitch/Unity/archive/v2.5.1.zip
+    URL https://github.com/ThrowTheSwitch/Unity/archive/v2.5.1.tar.gz
     PREFIX ${UNITY_BUILD_DIR}
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${UNITY_INSTALL_DIR} -DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}
+    CONFIGURE_COMMAND ""
+    BUILD_COMMAND ""
+    INSTALL_COMMAND ""
+    TEST_COMMAND ""
 )
 
-add_library(unity IMPORTED STATIC GLOBAL)
-set_target_properties(unity PROPERTIES
-    IMPORTED_LOCATION ${UNITY_LIB_DIR}/libunity.a
+ExternalProject_Get_Property(unitytest SOURCE_DIR)
+
+ExternalProject_Add_Step(
+    unitytest
+    copySource
+    WORKING_DIRECTORY ${SOURCE_DIR}
+    COMMAND ${CMAKE_COMMAND} -E copy_directory src ${UNITY_INSTALL_DIR}/src
+    COMMAND ${CMAKE_COMMAND} -E copy_directory extras/fixture/src ${UNITY_INSTALL_DIR}/src
+    COMMAND ${CMAKE_COMMAND} -E copy_directory extras/memory/src ${UNITY_INSTALL_DIR}/src
+    COMMENT "Copying extras to ${UNITY_INSTALL_DIR}/extra"
+    DEPENDEES download
 )
 
 function(add_unit_test target_name name)
@@ -30,29 +40,45 @@ function(add_unit_test target_name name)
     )
 endfunction()
 
-add_executable(tests)
+add_executable(tests.elf 
+    ${UNITY_INCLUDE_DIR}/unity.c
+    ${UNITY_INCLUDE_DIR}/unity_fixture.c
+    ${UNITY_INCLUDE_DIR}/unity_memory.c
+)
 
 add_subdirectory(test_runners)
 
-target_compile_options(tests PRIVATE
-    -Os -mmcu=attiny2313 -Wall
+target_compile_options(tests.elf PRIVATE
+    -Os -mmcu=atmega168pa -Wall -DUNITY_INCLUDE_CONFIG_H
 )
 
-target_include_directories(tests
-    PUBLIC
+target_link_options(tests.elf PRIVATE
+    -Os -mmcu=atmega168pa -Wall -DUNITY_INCLUDE_CONFIG_H
+)
+
+target_link_libraries(tests.elf
+    mymath
+    driver
+)
+
+target_include_directories(tests.elf
+    PRIVATE
     ${UNITY_INCLUDE_DIR}
 )
 
-target_link_libraries(tests
-    unity
-    mymathlib
+target_compile_features(tests.elf PRIVATE
+    c_std_99
+)
+
+add_custom_target(debug_test
+    WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+    DEPENDS tests.elf
 )
 
 add_custom_target(release_test
-    #COMMAND tests
-    COMMAND echo "HELLO"
+    COMMAND avr-objcopy -j .text -j .data -O ihex tests.elf tests.hex
     WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
-    #DEPENDS tests
+    DEPENDS tests.elf
 )
 
-add_unit_test(tests test1)
+add_unit_test(tests.elf test1)

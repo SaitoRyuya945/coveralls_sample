@@ -10,16 +10,14 @@ target_link_options(mymath_sample PRIVATE
 )
 
 target_compile_features(mymath_sample PUBLIC
-    cxx_std_14
+    c_std_99
 )
 
 target_link_libraries(mymath_sample
-    mymathlib
+    mymath
 )
 
 add_custom_target(run_mymath_sample
-    #COMMAND mymath_sample
-    COMMAND echo "HELLO"
     WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
     DEPENDS mymath_sample
 )

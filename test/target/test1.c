@@ -1,13 +1,16 @@
-#include "unity/unity.h"
+#include "unity_fixture.h"
 
-void setUp(void) {
-    return ;
+TEST_GROUP(test1_sample);
+
+TEST_SETUP(test1_sample)
+{
 }
 
-void tearDown(void) {
-    return ;
+TEST_TEAR_DOWN(test1_sample)
+{
 }
 
-void test_sample1(void) {
-    TEST_ASSERT_EQUAL(1, 0);
+TEST(test1_sample, test1_test)
+{
+    TEST_ASSERT_EQUAL(0, 1);
 }
